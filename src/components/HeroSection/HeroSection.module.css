@@ -1,0 +1,23 @@
+.hero{
+    background-image: url("../../assets/Darjeeling_tea_gardens_sunrise_cfbb7928.png");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Make hero cover header also */
+    margin-top: -80px;         /* height of header */
+    padding-top: 80px;         /* push content down */
+}
+
+/* Gradient Overlay
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(165, 158, 158, 0.4),
+    rgba(155, 150, 150, 0.7)
+  );
+  z-index: 1;
+} */
