@@ -1,71 +1,109 @@
+/* -------------------------
+   HEADER (Desktop + Mobile)
+-------------------------- */
 .header {
-    width: auto;
-    padding: 15px 40px;
-    color: #070707;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    z-index: 999;
-    top: 0;
-    background: transparent;
-    backdrop-filter: blur(6px);
+  width: auto;
+  padding: 16px 40px;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  /* Transparent initial header */
+  background: transparent;
+  backdrop-filter: blur(6px);
+
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 
+/* Header becomes non-transparent when scrolling */
+.header.scroll {
+  background: rgba(245, 245, 245, 0.92);
+  padding: 10px 40px;  /* Slight shrink effect */
+  backdrop-filter: blur(10px);
+}
+
+/* -------------------------
+   LOGO
+-------------------------- */
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #111;
 }
 
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  padding-top: 6px;
+}
+
+.nav ul li {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav ul li a {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav ul li a:hover {
+  color: #0957a8;
+}
+
+/* -------------------------
+   HAMBURGER (Mobile only)
+-------------------------- */
 .hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* -------------------------
+   MOBILE NAVIGATION
+-------------------------- */
+@media (max-width: 768px) {
+
+  .nav {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 220px;
+
+    background: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 6px;
+
     display: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-.nav ul{
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-.nav ul li a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav ul li a:hover{
-    color: #00eaff;
-}
-
-@media (max-width:768px) {
-    .nav{
-        position: absolute;
-        top: 60px;
-        /* right: -10px; */
-        background: #222;
-        width: 200px;
-        padding: 20px;
-        display: none;
-        transition: 0.3s;
-    }
-    .nav.open{
-        display: block;
-        right: 0;
-    }
-    .nav ul{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav ul li{
-         padding: 10px;
-    }
-    .hamburger{
-        display: block;
-    }
-    .nav ul {
-    display: flex;
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
   }
-    
+
+  .nav.open {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav ul li a {
+    color: #ffffff;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

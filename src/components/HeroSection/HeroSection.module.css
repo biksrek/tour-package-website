@@ -9,6 +9,19 @@
     /* Make hero cover header also */
     margin-top: -80px;         /* height of header */
     padding-top: 80px;         /* push content down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero h1{
+      font-size: 80px;
+      color: #fff;
+}
+.hero p{
+  font-size: 25px;
+  color: #fff;
 }
 
 /* Gradient Overlay
